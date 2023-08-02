@@ -20,3 +20,4 @@ Route.get("/", () => {
   return { greeting: "Hello world in JSON for Hype" };
 });
 Route.post("parse", "UserInfoController.parse");
+Route.get("/parsed", "UserInfoController.index");

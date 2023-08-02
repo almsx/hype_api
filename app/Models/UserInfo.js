@@ -7,6 +7,10 @@ class UserInfo extends Model {
     return "user_infos";
   }
 
+  static get primaryKey() {
+    return "user_id";
+  }
+
   static get fillable() {
     return ["first_name", "last_name", "user_id"];
   }

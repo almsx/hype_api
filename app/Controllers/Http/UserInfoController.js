@@ -2,6 +2,18 @@
 const UserInfo = use("App/Models/UserInfo");
 
 class UserInfoController {
+  async index({ response }) {
+    try {
+      const allUserInfos = await UserInfo.all();
+
+      return response.status(200).json(allUserInfos);
+    } catch (error) {
+      console.error(error);
+      return response
+        .status(500)
+        .json({ error: "Internal Server Error: " + error.message });
+    }
+  }
   async parse({ request, response }) {
     try {
       const { encodedString } = request.all();
